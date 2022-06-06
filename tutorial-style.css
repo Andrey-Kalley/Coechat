@@ -1,0 +1,57 @@
+#perfil {
+  width: 50px;
+  height: 50px;
+  padding-right: 20px;
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.imgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: #f90808;
+  font-family: "Coda", sans-serif;
+  text-align: center;
+  font-size: 72px;
+}
+
+p {
+  font-family: "Coda", sans-serif;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  font-size: 36px;
+}
+
+input {
+  width: 146px;
+  height: 86px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: rgb(224, 224, 224);
+  font-size: 17px;
+  font-family: "Comfortaa", cursive;
+  padding: 1px;
+  margin-bottom: 10px;
+}
+
+a :hover {
+  background-color: #c5c5c5;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+footer {
+  bottom: 0;
+}

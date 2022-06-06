@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="imagens/logo.PNG" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="topicos2-style.css" />
+    <title>CoeChat - Tópicos</title>
+  </head>
+  <body>
+    <header>
+      <div class="imgs">
+        <a href="inicial.html">
+          <img src="imagens/logo.PNG" alt="logo" />
+        </a>
+        <h1>Tópicos</h1>
+        <img src="imagens/perfil.png" alt="icone de perfil" id="perfil" />
+      </div>
+    </header>
+    <hr />
+
+    <div id="bloco">
+      <div id="b1">
+        <ul>
+          <li>
+            <button><strong>Matemática</strong></button>
+          </li>
+          <li>
+            <button><strong>Português</strong></button>
+          </li>
+          <li>
+            <button><strong>Sociologia</strong></button>
+          </li>
+          <li>
+            <button><strong>Filosofia</strong></button>
+          </li>
+          <li>
+            <button><strong>História</strong></button>
+          </li>
+          <li>
+            <button><strong>Geografia</strong></button>
+          </li>
+          <li>
+            <button><strong>Física</strong></button>
+          </li>
+          <li>
+            <button><strong>Química</strong></button>
+          </li>
+          <li>
+            <button><strong>Biologia</strong></button>
+          </li>
+          <li>
+            <button><strong>Literatura</strong></button>
+          </li>
+          <li>
+            <button><strong>Artes</strong></button>
+          </li>
+        </ul>
+      </div>
+
+      <div id="b2">
+        <div class="content">
+          <div id="perguntas">
+            <div class="topicos">
+              <img
+                src="imagens/perfil-topicos.png"
+                alt=""
+                class="img-topicos"
+              />
+              <p>Como tirar a porcentagem de um determinado número?</p>
+            </div>
+
+            <div id="container-respostas">asdasd</div>
+          </div>
+          <div class="spacer"></div>
+          <form onsubmit="return false">
+            <textarea
+              cols="95"
+              rows="15"
+              placeholder="Acrescente algo à discussão..."
+              id="input-resposta"
+            ></textarea>
+            <div id="but">
+              <input
+                type="submit"
+                onClick="addResposta()"
+                value="ENVIAR"
+                class="input-enviar"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="b3">
+        <div class="b3blocos">
+          <p>
+            Trending <br />
+            Topics
+          </p>
+        </div>
+        <div id="cent">
+          <div class="b3blocos1">
+            <p>Olímpíada Brasileira de Biologia</p>
+          </div>
+
+          <div class="b3blocos1">
+            <p id="ginc">Gincana de Praia</p>
+          </div>
+
+          <div class="b3blocos1">
+            <p>Robótica viaja para São Paulo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      respostas = [];
+      function addResposta() {
+        var textarea = document.getElementById("input-resposta");
+        var text = textarea.value;
+        respostas.push(text);
+        console.log(respostas);
+        textarea.value = "";
+
+        updateRespostas();
+      }
+
+      function updateRespostas() {
+        var novoarrayderespostas = respostas
+          .map((el) => {
+            return `
+            <p class="resposta">
+              <img id = "perfil" src="imagens/perfil-topicos.png" alt="" class="img-topicos" />
+              ${el}
+            </p>
+        `;
+          })
+          .join("");
+
+        document.getElementById(
+          "container-respostas"
+        ).innerHTML = novoarrayderespostas;
+      }
+
+      updateRespostas();
+    </script>
+  </body>
+</html>

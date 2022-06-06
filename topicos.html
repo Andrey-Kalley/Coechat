@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="imagens/logo.PNG" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="topicos-style.css" />
+    <title>CoeChat - Tópicos</title>
+  </head>
+  <body>
+    <header>
+      <div class="imgs">
+        <a href="inicial.html">
+          <img src="imagens/logo.PNG" alt="logo" />
+        </a>
+        <h1>Tópicos</h1>
+        <img src="imagens/perfil.png" alt="icone de perfil" id="perfil" />
+      </div>
+    </header>
+    <hr />
+
+    <div id="bloco">
+      <div id="b1">
+        <ul>
+          <li>
+            <button class="botaoNav " onClick="trocaPagina('matematica')"><strong>Matemática</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav " onClick="trocaPagina('portugues')"><strong>Português</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('sociologia')"><strong>Sociologia</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('filosofia')"><strong>Filosofia</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('historia')"><strong>História</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('geografia')"><strong>Geografia</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('fisica')"><strong>Física</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('quimica')"><strong>Química</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('biologia')"><strong>Biologia</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('literatura')"><strong>Literatura</strong></button>
+          </li>
+          <li>
+            <button class="botaoNav" onClick="trocaPagina('artes')"><strong>Artes</strong></button>
+          </li>
+        </ul>
+      </div>
+
+      <div id="b2">
+        <div class="content">
+          <form onSubmit="return false">
+            <textarea
+            id="enviarDuvida"
+              cols="100"
+              rows="20"
+              placeholder="Digite sua dúvida..."
+              resize: none
+     
+            ></textarea>
+            <div id="but">
+              <input
+              onClick="enviarDuvidas()"
+                type="submit"
+                value="ENVIAR"
+                class="input-enviar"
+              />
+            </div>
+          </form>
+          
+          <div id="perguntas2" class="teste">
+           
+          </div>
+        </div>
+      </div>
+
+      <div id="b3">
+        <div class="b3blocos">
+          <p>Trending <br />
+          Topics</p>
+        </div>
+        <div id="cent">
+          <div class="b3blocos1">
+            <p>Olímpíada Brasileira de Biologia</p>
+          </div>
+
+          <div class="b3blocos1">
+            <p id="ginc">Gincana de Praia</p>
+          </div>
+
+          <div class="b3blocos1">
+            <p>Robótica viaja para São Paulo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let dados = {
+          matematica: [
+            "Como tirar a porcentagem de um número",
+            "Como posso calcular a hipotenusa do triângulo retângulo?",
+          ],
+
+          portugues: ["O que é uma vogal?", "Quais são as classes gramaticais?"],
+
+          sociologia: ["Qual a definição de CULTURA?", "O que seria uma ação social?"]
+          
+          
+
+        };
+
+        let paginaAtual = dados.matematica;
+        let materiaEscolhida = "matematica";
+
+        function trocaPagina(materia) {
+          paginaAtual = dados[materia];
+          materiaEscolhida = materia;
+          renderizarPerguntas();
+
+          var botoes = document.getElementsByClassName("botaoNav");
+        }
+
+        function renderizarPerguntas() {
+          var divPerguntas = document.getElementById("perguntas2");
+
+          var tags = paginaAtual.map((el, index) => {
+            return `
+            <a href="topicos3.html?pergunta=${el}">
+              <div class="topicos">
+                <img
+                  src="imagens/perfil-topicos.png"
+                  alt=""
+                  class="img-topicos"
+                />
+                <p>${el}</p>
+              </div>
+            </a>`;
+          });
+          console.log("oi");
+          divPerguntas.innerHTML = tags.join(" ");
+        }
+
+        renderizarPerguntas();
+
+        function enviarDuvidas() {
+          var textarea = document.getElementById('enviarDuvida').value;
+          dados[materiaEscolhida].push(textarea);
+          dados[materiaEscolhida].shift();
+          document.getElementById('enviarDuvida').value = "";
+
+          renderizarPerguntas();
+        }
+
+    </script>
+  </body>
+</html>

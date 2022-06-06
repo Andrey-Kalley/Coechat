@@ -1,0 +1,52 @@
+#perfil {
+  width: 50px;
+  height: 50px;
+  padding-right: 20px;
+}
+
+.imgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.botoes img {
+  width: 300px;
+  height: 300px;
+}
+
+.botoes a {
+  color: black;
+  border: 1px solid;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+#tutorial {
+  margin-left: 100px;
+  margin-right: 100px;
+
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+  padding-top: 10px;
+}
+.botoes a p {
+  font-family: Coda;
+  font-size: 20px;
+  color: black;
+  align-items: center;
+}
+.botoes a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#tut {
+  height: 290px;
+}

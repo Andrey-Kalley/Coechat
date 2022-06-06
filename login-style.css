@@ -1,0 +1,115 @@
+.email input,
+.senha input {
+  width: 360px;
+  height: 32px;
+  border-radius: 11px;
+  background-color: #d8d8d8;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+}
+
+.senha {
+  padding-top: 50px;
+}
+
+.email {
+  padding-top: 50px;
+}
+.senha label,
+.email label {
+  font-size: 14px;
+  font-family: "Comfortaa", cursive;
+  margin-left: 15px;
+}
+
+h1 {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+}
+
+.enviar {
+  padding-top: 80px;
+}
+
+.enviar input {
+  width: 181px;
+  height: 46px;
+  border-radius: 22px;
+  font-family: "Comfortaa", cursive;
+  cursor: pointer;
+  background-color: #d8d8d8;
+  border: none;
+}
+.enviar {
+  text-align: center;
+  margin: 20px;
+}
+
+.enviar input:hover {
+  background-color: #b9b9b9;
+}
+
+::placeholder {
+  padding-left: 2px;
+}
+
+.bloco {
+  background-color: #ececec;
+  border-radius: 11px;
+  padding: 10px;
+}
+
+form input {
+  padding-left: 10px;
+}
+
+#perfil {
+  width: 50px;
+  height: 50px;
+  padding-right: 20px;
+}
+
+.imgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bloco {
+  width: 395px;
+  height: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 90px;
+}
+
+#enviar {
+  font-size: 18px;
+}
+
+.btn-submit {
+  width: 181px;
+  height: 46px;
+  border-radius: 22px;
+  font-family: "Comfortaa", cursive;
+  cursor: pointer;
+  background-color: #d8d8d8;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn-submit:hover {
+  background-color: #b9b9b9;
+}
